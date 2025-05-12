@@ -1,139 +1,147 @@
-# Task Management Application - Oritso Assignment
-
-## Overview
-
+Task Management Application - Oritso Assignment
+Overview
 This Task Management application is designed as part of the Oritso recruitment process. It demonstrates a candidate's proficiency in full-stack application development using the MVC architecture. The application allows users to create, read, update, delete, and search for tasks with a responsive frontend and secure backend.
 
-## Database Design
+🔗 Frontend GitHub Repository: https://github.com/aliabrar21/Task-Manager-Client-Side
 
-### Data Dictionary
+🔗 Backend GitHub Repository: https://github.com/aliabrar21/Task-Manager-Server-Side
 
-| Field Name        | Data Type | Description                                |
-| ----------------- | --------- | ------------------------------------------ |
-| task\_id          | INT (PK)  | Unique ID for each task                    |
-| task\_title       | VARCHAR   | Title of the task                          |
-| task\_description | TEXT      | Description of the task                    |
-| task\_due\_date   | DATE      | Due date for the task                      |
-| task\_status      | VARCHAR   | Status of the task (Pending/Completed)     |
+Database Design
+Data Dictionary
+Field Name	Data Type	Description
+task_id	INT (PK)	Unique ID for each task
+task_title	VARCHAR	Title of the task
+task_description	TEXT	Description of the task
+task_due_date	DATE	Due date for the task
+task_status	VARCHAR	Status of the task (Pending/Completed)
 
-### Indexes Used
+Indexes Used
+Primary key on task_id
 
-* Primary key on `task_id`
-* Index on `task_due_date`, `task_status` for efficient filtering
+Index on task_due_date, task_status for efficient filtering
 
-### Approach
+Approach
+Code First approach has been used to allow easy versioning and migrations with ORM support.
 
-* **Code First** approach has been used to allow easy versioning and migrations with ORM support.
+Application Structure
+Architecture
+This is a Single Page Application (SPA) built with React and connected to an API developed using Node.js and Express.js.
 
-## Application Structure
+Frontend Structure
+Technology Used: React.js (SPA)
 
-### Architecture
+Why: React is lightweight, scalable, component-based, and ideal for dynamic updates required in task management.
 
-* This is a **Single Page Application (SPA)** built with React and connected to an API developed using Node.js and Express.js.
+The frontend uses React Router for routing, Axios for API calls, and Tailwind CSS for responsive UI.
 
-### Frontend Structure
+Backend Structure
+Technology Used: Node.js + Express.js (REST API)
 
-* **Technology Used**: React.js (SPA)
-* **Why**: React is lightweight, scalable, component-based, and ideal for dynamic updates required in task management.
-* The frontend uses React Router for routing, Axios for API calls, and Tailwind CSS for responsive UI.
+Why: Enables building fast and scalable APIs, and works seamlessly with PostgreSQL.
 
-### Backend Structure
+API Endpoints
+GET /tasks - List all tasks
 
-* **Technology Used**: Node.js + Express.js (REST API)
-* **Why**: Enables building fast and scalable APIs, and works seamlessly with PostgreSQL.
+POST /tasks - Create a new task
 
-### API Endpoints
+GET /tasks/:id - Get task by ID
 
-* `GET /tasks` - List all tasks
-* `POST /tasks` - Create a new task
-* `GET /tasks/:id` - Get task by ID
-* `PUT /tasks/:id` - Update task by ID
-* `DELETE /tasks/:id` - Delete task by ID
-* `GET /tasks/search?q=keyword` - Search tasks
+PUT /tasks/:id - Update task by ID
 
-## Build and Install
+DELETE /tasks/:id - Delete task by ID
 
-### Environment Details
+GET /tasks/search?q=keyword - Search tasks
 
-* Node.js (v18+)
-* PostgreSQL (v14+)
-* React (v18+)
+Build and Install
+Environment Details
+Node.js (v18+)
 
-### Dependencies
+PostgreSQL (v14+)
 
-#### Frontend
+React (v18+)
 
-* React
-* Axios
-* React Router DOM
-* Tailwind CSS
+Dependencies
+Frontend
+React
 
-#### Backend
+Axios
 
-* Express
-* pg (PostgreSQL client)
-* CORS
-* dotenv
+React Router DOM
 
-### Build Instructions
+Tailwind CSS
 
-#### Frontend
+Backend
+Express
 
-```bash
+pg (PostgreSQL client)
+
+CORS
+
+dotenv
+
+Build Instructions
+Frontend
+bash
+Copy
+Edit
 cd frontend
 npm install
 npm run build
-```
-
-#### Backend
-
-```bash
+Backend
+bash
+Copy
+Edit
 cd backend
 npm install
 npm run dev
-```
-
-### Run Instructions
-
-#### Frontend
-
-```bash
+Run Instructions
+Frontend
+bash
+Copy
+Edit
 npm start
-```
-
-#### Backend
-
-```bash
+Backend
+bash
+Copy
+Edit
 npm start
-```
-
 Ensure PostgreSQL is running and environment variables are properly configured.
 
-## General Documentation
+General Documentation
+Authentication: JWT-based user authentication (optional for extension)
 
-* **Authentication**: JWT-based user authentication (optional for extension)
-* **Error Handling**: Standardized error response structure used
-* **Logging**: Console logs added; extendable to use Winston or Morgan
-* **SCM**: All code hosted on [GitHub Repository](https://github.com/username/task-manager)
-* **Project Management Tool**: GitHub Projects board used for task tracking
+Error Handling: Standardized error response structure used
 
-## Demonstrated Skills
+Logging: Console logs added; extendable to use Winston or Morgan
 
-* CRUD functionality
-* SPA development using React.js
-* REST API development using Node.js
-* Database design and indexing in PostgreSQL
-* Git & GitHub proficiency
-* End-to-end documentation in markdown
-* Deployment readiness
+SCM:
 
-## Final Notes
+Frontend: GitHub - https://github.com/aliabrar21/Task-Manager-Client-Side
 
+Backend: GitHub - https://github.com/aliabrar21/Task-Manager-Server-Side
+
+Project Management Tool: GitHub Projects board used for task tracking
+
+Demonstrated Skills
+CRUD functionality
+
+SPA development using React.js
+
+REST API development using Node.js
+
+Database design and indexing in PostgreSQL
+
+Git & GitHub proficiency
+
+End-to-end documentation in markdown
+
+Deployment readiness
+
+Final Notes
 All development was done individually by the candidate. External resources were referred only for understanding or troubleshooting, and not for copy-pasting the solution. A full demo will be presented during the face-to-face discussion.
 
----
+Candidate: Abrar Ali
+Frontend GitHub Repo: https://github.com/aliabrar21/Task-Manager-Client-Side
+Backend GitHub Repo: https://github.com/aliabrar21/Task-Manager-Server-Side
 
-**Candidate:** Abrar Ali
-**GitHub Repo:** [https://github.com/abrar-dev/task-manager](https://github.com/abrar-dev/task-manager)
-
-> *Submitted as part of Oritso Recruitment Assignment Process.*
+Submitted as part of Oritso Recruitment Assignment Process.
