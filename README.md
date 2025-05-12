@@ -6,10 +6,6 @@ This Task Management application is designed as part of the Oritso recruitment p
 
 ## Database Design
 
-### ER Diagram
-
-![ER Diagram](./images/er-diagram.png) *(Add an image path or upload to repo)*
-
 ### Data Dictionary
 
 | Field Name        | Data Type | Description                                |
@@ -19,13 +15,6 @@ This Task Management application is designed as part of the Oritso recruitment p
 | task\_description | TEXT      | Description of the task                    |
 | task\_due\_date   | DATE      | Due date for the task                      |
 | task\_status      | VARCHAR   | Status of the task (Pending/Completed)     |
-| task\_remarks     | TEXT      | Additional remarks                         |
-| created\_on       | TIMESTAMP | When the task was created                  |
-| updated\_on       | TIMESTAMP | When the task was last updated             |
-| created\_by\_name | VARCHAR   | Name of the user who created the task      |
-| created\_by\_id   | INT       | ID of the user who created the task        |
-| updated\_by\_name | VARCHAR   | Name of the user who last updated the task |
-| updated\_by\_id   | INT       | ID of the user who last updated the task   |
 
 ### Indexes Used
 
