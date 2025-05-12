@@ -1,70 +1,150 @@
-# Getting Started with Create React App
+# Task Management Application - Oritso Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This Task Management application is designed as part of the Oritso recruitment process. It demonstrates a candidate's proficiency in full-stack application development using the MVC architecture. The application allows users to create, read, update, delete, and search for tasks with a responsive frontend and secure backend.
 
-In the project directory, you can run:
+## Database Design
 
-### `npm start`
+### ER Diagram
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![ER Diagram](./images/er-diagram.png) *(Add an image path or upload to repo)*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Data Dictionary
 
-### `npm test`
+| Field Name        | Data Type | Description                                |
+| ----------------- | --------- | ------------------------------------------ |
+| task\_id          | INT (PK)  | Unique ID for each task                    |
+| task\_title       | VARCHAR   | Title of the task                          |
+| task\_description | TEXT      | Description of the task                    |
+| task\_due\_date   | DATE      | Due date for the task                      |
+| task\_status      | VARCHAR   | Status of the task (Pending/Completed)     |
+| task\_remarks     | TEXT      | Additional remarks                         |
+| created\_on       | TIMESTAMP | When the task was created                  |
+| updated\_on       | TIMESTAMP | When the task was last updated             |
+| created\_by\_name | VARCHAR   | Name of the user who created the task      |
+| created\_by\_id   | INT       | ID of the user who created the task        |
+| updated\_by\_name | VARCHAR   | Name of the user who last updated the task |
+| updated\_by\_id   | INT       | ID of the user who last updated the task   |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Indexes Used
 
-### `npm run build`
+* Primary key on `task_id`
+* Index on `task_due_date`, `task_status` for efficient filtering
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Approach
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **Code First** approach has been used to allow easy versioning and migrations with ORM support.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Application Structure
 
-### `npm run eject`
+### Architecture
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* This is a **Single Page Application (SPA)** built with React and connected to an API developed using Node.js and Express.js.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Frontend Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* **Technology Used**: React.js (SPA)
+* **Why**: React is lightweight, scalable, component-based, and ideal for dynamic updates required in task management.
+* The frontend uses React Router for routing, Axios for API calls, and Tailwind CSS for responsive UI.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Backend Structure
 
-## Learn More
+* **Technology Used**: Node.js + Express.js (REST API)
+* **Why**: Enables building fast and scalable APIs, and works seamlessly with PostgreSQL.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### API Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* `GET /tasks` - List all tasks
+* `POST /tasks` - Create a new task
+* `GET /tasks/:id` - Get task by ID
+* `PUT /tasks/:id` - Update task by ID
+* `DELETE /tasks/:id` - Delete task by ID
+* `GET /tasks/search?q=keyword` - Search tasks
 
-### Code Splitting
+## Build and Install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Environment Details
 
-### Analyzing the Bundle Size
+* Node.js (v18+)
+* PostgreSQL (v14+)
+* React (v18+)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Dependencies
 
-### Making a Progressive Web App
+#### Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* React
+* Axios
+* React Router DOM
+* Tailwind CSS
 
-### Advanced Configuration
+#### Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Express
+* pg (PostgreSQL client)
+* CORS
+* dotenv
 
-### Deployment
+### Build Instructions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Frontend
 
-### `npm run build` fails to minify
+```bash
+cd frontend
+npm install
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### Run Instructions
+
+#### Frontend
+
+```bash
+npm start
+```
+
+#### Backend
+
+```bash
+npm start
+```
+
+Ensure PostgreSQL is running and environment variables are properly configured.
+
+## General Documentation
+
+* **Authentication**: JWT-based user authentication (optional for extension)
+* **Error Handling**: Standardized error response structure used
+* **Logging**: Console logs added; extendable to use Winston or Morgan
+* **SCM**: All code hosted on [GitHub Repository](https://github.com/username/task-manager)
+* **Project Management Tool**: GitHub Projects board used for task tracking
+
+## Demonstrated Skills
+
+* CRUD functionality
+* SPA development using React.js
+* REST API development using Node.js
+* Database design and indexing in PostgreSQL
+* Git & GitHub proficiency
+* End-to-end documentation in markdown
+* Deployment readiness
+
+## Final Notes
+
+All development was done individually by the candidate. External resources were referred only for understanding or troubleshooting, and not for copy-pasting the solution. A full demo will be presented during the face-to-face discussion.
+
+---
+
+**Candidate:** Abrar Ali
+**GitHub Repo:** [https://github.com/abrar-dev/task-manager](https://github.com/abrar-dev/task-manager)
+
+> *Submitted as part of Oritso Recruitment Assignment Process.*
